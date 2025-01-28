@@ -1,0 +1,17 @@
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+.DS_Store
+Thumbs.db
+
+node_modules
+**/dist
+
+*.log
+npm-debug.log*
+*.tsbuildinfo

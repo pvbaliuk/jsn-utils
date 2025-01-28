@@ -1,0 +1,40 @@
+{
+  "name": "helpful-utils",
+  "version": "1.0.0",
+  "description": "Various helpful utility functions",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pvbaliuk/helpful-utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "Pavlo Baliuk <pv.baliuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pvbaliuk/helpful-utils/issues"
+  },
+  "homepage": "https://github.com/pvbaliuk/helpful-utils#readme",
+  "dependencies": {
+    "zod": "^3.24.1",
+    "zod-validation-error": "^3.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
