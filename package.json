@@ -1,5 +1,5 @@
 {
-  "name": "helpful-utils",
+  "name": "jsn-utils",
   "version": "1.0.0",
   "description": "Various helpful utility functions",
   "main": "./dist/cjs/index.js",
@@ -20,17 +20,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/pvbaliuk/helpful-utils.git"
+    "url": "git+ssh://git@github.com/pvbaliuk/jsn-utils.git"
   },
   "keywords": [
     "utils"
   ],
-  "author": "Pavlo Baliuk <pv.baliuk@gmail.com>",
+  "author": "Pavlo Baliuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pvbaliuk/helpful-utils/issues"
+    "url": "https://github.com/pvbaliuk/jsn-utils/issues"
   },
-  "homepage": "https://github.com/pvbaliuk/helpful-utils#readme",
+  "homepage": "https://github.com/pvbaliuk/jsn-utils#readme",
   "dependencies": {
     "zod": "^3.24.1",
     "zod-validation-error": "^3.4.0"
