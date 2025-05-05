@@ -15,18 +15,19 @@ type FailureOutput = [false, null, (
 )];
 
 /**
- * Validates and parses a JSON string or a Jsonifiable object against a specified Zod schema.
+ * Validates a JSON object against a specified Zod schema and returns the validation result.
  *
- * @template O - The Zod schema type used for validation.
- * @param {string | Jsonifiable} json - The JSON input, either as a string or a Jsonifiable object.
- * @param {O} schema - The Zod schema instance to validate the input against.
- * @returns {SuccessOutput<O> | FailureOutput} A tuple representing the validation result.
- *          If validation is successful, the first element is `true`, the second element is the parsed data, and the third is `null`.
- *          If validation fails, the first element is `false`, the second is `null`, and the third is an error object containing validation details.
+ * @template O - The Zod schema type.
+ * @param {Jsonifiable} json - The input JSON object to be validated. Can be a JSON string or a JSON-compatible object.
+ * @param {O} schema - A Zod schema used to validate the JSON object.
+ * @param {boolean} [asJSONString=false] - A flag indicating if the input `json` should be parsed as a JSON string when it's of type string. Defaults to `false`.
+ * @returns {SuccessOutput<O> | FailureOutput} An array where the first element is a boolean indicating success,
+ * the second element is the validated data (if successful) or `null` (if failed),
+ * and the third element is additional error details in case of validation failure.
  */
-export const getValidatedJSON = <O extends z.ZodTypeAny>(json: string|Jsonifiable, schema: O): SuccessOutput<O> | FailureOutput => {
+export const getValidatedJSON = <O extends z.ZodTypeAny>(json: Jsonifiable, schema: O, asJSONString: boolean = false): SuccessOutput<O> | FailureOutput => {
     let jsonObj: any|null = typeof json === 'string' ? null : json;
-    if(typeof json === 'string'){
+    if(typeof json === 'string' && asJSONString){
         try{
             jsonObj = JSON.parse(json);
         }catch(e){
@@ -34,11 +35,11 @@ export const getValidatedJSON = <O extends z.ZodTypeAny>(json: string|Jsonifiabl
         }
     }
 
-    if(!jsonObj)
+    if(typeof json === 'string' && asJSONString && !jsonObj)
         return [false, null, {}];
 
     try{
-        const data = schema.parse(jsonObj);
+        const data = schema.parse(typeof json === 'string' && !asJSONString ? json : jsonObj);
         return [true, data, null];
     }catch(e){
         return [false, null, e instanceof z.ZodError ? {
