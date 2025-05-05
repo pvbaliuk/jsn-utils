@@ -1,6 +1,6 @@
 {
   "name": "jsn-utils",
-  "version": "2.0.0",
+  "version": "3.0.0-beta.1",
   "description": "Various helpful utility functions",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -33,10 +33,9 @@
   },
   "homepage": "https://github.com/pvbaliuk/jsn-utils#readme",
   "dependencies": {
-    "zod": "^3.24.2",
-    "zod-validation-error": "^3.4.0"
+    "zod": "^4.0.0-beta.20250505T012514"
   },
   "devDependencies": {
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   }
 }
