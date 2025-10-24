@@ -9,4 +9,4 @@
 - `wait(ms: number, signal?: AbortSignal): Promise<void>` - Returns a promise that resolves after the specified amount of time in milliseconds or when signal is aborted
 - `createPromisesCache` - deprecated; use createInFlightDeduper instead
 - `createInFlightDeduper` - Creates a deduplicator for in-flight promises or sync functions. Prevents duplicate executions for the same key while a promise is pending. Clears the entry after settlement
-- `withErrorResult` - Wraps a function with try-catch block and returns result in format of a tuple, where first element is a result or null and the second element is an error or null
+- `resultify` - Executes a function and returns its result as a tuple `[value, error]`. Works with both sync and async functions. Never throws.
