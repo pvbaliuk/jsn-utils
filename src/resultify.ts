@@ -1,5 +1,4 @@
-type WrapFn<R = any> = () => R | Promise<R>;
-type ErrorResult<R = any, E = Error> = readonly [R, null] | readonly [null, E];
+export type ErrorResult<R, E = Error> = readonly [R, null] | readonly [null, E];
 
 export function resultify<E = Error, R = any>(fn: () => R): ErrorResult<R, E>;
 export function resultify<E = Error, R = any>(fn: () => Promise<R>): Promise<ErrorResult<R, E>>;
@@ -9,15 +8,17 @@ export function resultify<E = Error, R = any>(fn: () => Promise<R>): Promise<Err
  *
  * @template {Error} E
  * @template {any} R
- * @param {WrapFn<R>} fn
- * @returns {ErrorResult<R> |
+ * @param {(() => R) | (() => Promise<R>)} fn
+ * @returns {ErrorResult<R> | Promise<ErrorResult<R, E>>}
  */
-export function resultify<E = Error, R = any>(fn: WrapFn<R>): ErrorResult<R, E> | Promise<ErrorResult<R, E>> {
+export function resultify<E = Error, R = any>(
+    fn: () => R | Promise<R>
+): ErrorResult<R, E> | Promise<ErrorResult<R, E>> {
     try {
         const promiseOrResult = fn();
-        if (promiseOrResult && typeof (promiseOrResult as any).then === 'function') {
+        if (promiseOrResult instanceof Promise) {
             return (promiseOrResult as Promise<R>)
-                .then(res => [res, null] as const)
+                .then(res => [res as R, null] as const)
                 .catch(err => [null, err as E] as const);
         }
 
