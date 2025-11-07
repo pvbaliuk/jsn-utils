@@ -1,5 +1,9 @@
 type InFlightDeduper = {
-    create: <R extends any = any>(key: string, fn: () => R|Promise<R>) => Promise<R>;
+    /**
+     * @deprecated Use use() instead
+     */
+    create: <F extends () => any>(key: string, fn: F) => Promise<Awaited<ReturnType<F>>>;
+    use: <F extends () => any>(key: string, fn: F) => Promise<Awaited<ReturnType<F>>>;
 };
 
 /**
@@ -11,29 +15,23 @@ type InFlightDeduper = {
 export function createInFlightDeduper(): InFlightDeduper{
     const __promises = new Map<string, Promise<any>>();
 
-    return {
-        create: function<R extends any = any>(key: string, fn: () => R|Promise<R>): Promise<R>{
-            let promise = __promises.get(key);
-            if(promise)
-                return promise;
-
-            promise = new Promise<R>((resolve, reject) => {
-                try{
-                    const resultOrPromise = fn();
-                    if(resultOrPromise instanceof Promise)
-                        return resultOrPromise
-                            .then(resolve)
-                            .catch(reject);
-
-                    return resolve(resultOrPromise);
-                }catch(e){
-                    reject(e);
-                }
-            });
-
-            promise.finally(() => {__promises.delete(key);});
-            __promises.set(key, promise);
+    function use<F extends () => any>(key: string, fn: F): Promise<Awaited<ReturnType<F>>>{
+        let promise = __promises.get(key);
+        if(promise)
             return promise;
-        }
+
+        promise = Promise.resolve(fn())
+            .finally(() => {__promises.delete(key);});
+
+        __promises.set(key, promise);
+        return promise;
+    }
+
+    return {
+        /**
+         * @deprecated Use use() instead
+         */
+        create: use,
+        use: use
     };
 }
