@@ -1,4 +1,4 @@
-## 3.6.1
+## 3.7.1
 ## List of utility functions
 
 - `noop(): void` - A no-operation function that does nothing

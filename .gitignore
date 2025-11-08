@@ -9,6 +9,8 @@
 .DS_Store
 Thumbs.db
 
+coverage/*
+
 node_modules
 **/dist
 

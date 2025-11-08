@@ -1,4 +1,4 @@
-type InFlightDeduper = {
+export type InFlightDeduper = {
     /**
      * @deprecated Use use() instead
      */

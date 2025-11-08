@@ -6,7 +6,11 @@
  * @returns {string[]} An array containing the chunks
  */
 export function chunkStr(str: string, chunkSize: number): string[]{
-    return Array.from({length: Math.ceil(str.length / chunkSize)}, (_, i) =>
-        str.slice(i * chunkSize, i * chunkSize + chunkSize)
+    if(chunkSize <= 0)
+        throw new TypeError('Chunk size should be greater than 0');
+
+    return Array.from({
+        length: Math.ceil(str.length / chunkSize)},
+        (_, i) => str.slice(i * chunkSize, i * chunkSize + chunkSize)
     );
 }
