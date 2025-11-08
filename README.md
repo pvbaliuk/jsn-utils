@@ -1,3 +1,6 @@
+# jsn-utils
+![coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
 ## 3.7.1
 ## List of utility functions
 
