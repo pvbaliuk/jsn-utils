@@ -1,7 +1,7 @@
 # jsn-utils
 ![coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-## 3.7.1
+## 3.7.2
 ## List of utility functions
 
 - `noop(): void` - A no-operation function that does nothing
