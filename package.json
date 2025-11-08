@@ -1,7 +1,7 @@
 {
   "name": "jsn-utils",
-  "version": "3.7.1",
-  "description": "Various helpful utility functions",
+  "version": "3.7.2",
+  "description": "Lightweight JavaScript/TypeScript utilities with async helpers, array and string operations",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -31,7 +31,12 @@
     "url": "git+ssh://git@github.com/pvbaliuk/jsn-utils.git"
   },
   "keywords": [
-    "utils"
+    "util",
+    "utils",
+    "helper",
+    "helpers",
+    "chunks",
+    "promises"
   ],
   "author": {
     "name": "Pavlo Baliuk",
