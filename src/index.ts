@@ -7,3 +7,4 @@ export * from './isObjectEmpty';
 export * from './createPromisesCache';
 export * from './createInFlightDeduper';
 export * from './resultify';
+export * from './monitor';

@@ -1,6 +1,6 @@
 {
   "name": "jsn-utils",
-  "version": "3.7.2",
+  "version": "3.8.0",
   "description": "Lightweight JavaScript/TypeScript utilities with async helpers, array and string operations",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
