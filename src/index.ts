@@ -8,3 +8,4 @@ export * from './createInFlightDeduper';
 export * from './resultify';
 export * from './monitor';
 export * from './trySettlePromises';
+export * from './isAbortError';
