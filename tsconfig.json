@@ -7,7 +7,7 @@
     "outDir": "./dist",
 
     "target": "ES2021",
-    "lib": ["ES2021"],
+    "lib": ["ES2021", "DOM"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "isolatedModules": true,
