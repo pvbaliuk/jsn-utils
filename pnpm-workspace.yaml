@@ -1,0 +1,15 @@
+blockExoticSubdeps: true
+catalog:
+  '@types/jest': ^30.0.0
+  jest: ^30.4.2
+  ts-jest: ^29.4.11
+  tsdown: ^0.22.7
+  typescript: ^5.9.3
+catalogMode: strict
+ignoreDepScripts: true
+minimumReleaseAge: 20160 # 30 days
+minimumReleaseAgeExclude:
+  - '@jsnw/*'
+minimumReleaseAgeIgnoreMissingTime: false
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 40320 # 60 days
