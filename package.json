@@ -45,6 +45,7 @@
   "homepage": "https://github.com/pvbaliuk/jsn-utils#readme",
   "devDependencies": {
     "@types/jest": "catalog:",
+    "@types/node": "catalog:",
     "jest": "catalog:",
     "ts-jest": "catalog:",
     "tsdown": "catalog:",
