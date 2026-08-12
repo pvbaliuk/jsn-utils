@@ -1,6 +1,6 @@
 {
   "name": "@jsnw/common-utils",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Lightweight JavaScript/TypeScript utilities with async helpers, array and string operations",
   "exports": {
     "import": {
