@@ -2,6 +2,7 @@ export * from './noop';
 export * from './ignorePromise';
 export * from './chunk';
 export * from './chunkStr';
+export * from './defer';
 export * from './wait';
 export * from './isObjectEmpty';
 export * from './createInFlightDeduper';
