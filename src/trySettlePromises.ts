@@ -14,6 +14,12 @@ type ErrorDetails = {reason: unknown; message?: string;}
 
 type ErrorCallback = (details: ErrorDetails, index: number) => void;
 
+/**
+ * @template {(Promise<any>|DescribedPromise<any>)[]} T
+ * @param {[...T]} promises
+ * @param {ErrorCallback} onError
+ * @returns {Promise<AwaitedTuple<T>>}
+ */
 export const trySettlePromises = async <
     T extends (Promise<any>|DescribedPromise<any>)[]
 >(
