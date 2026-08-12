@@ -8,6 +8,7 @@
 
     "target": "ES2021",
     "lib": ["ES2021", "DOM"],
+    "types": ["node", "jest"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "isolatedModules": true,
