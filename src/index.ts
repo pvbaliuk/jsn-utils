@@ -10,3 +10,4 @@ export * from './monitor';
 export * from './trySettlePromises';
 export * from './isAbortError';
 export * from './withPerfmon';
+export * from './promisify';
