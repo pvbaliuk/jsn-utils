@@ -2,6 +2,9 @@
   "name": "@jsnw/common-utils",
   "version": "1.5.0",
   "description": "Lightweight JavaScript/TypeScript utilities with async helpers, array and string operations",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",
