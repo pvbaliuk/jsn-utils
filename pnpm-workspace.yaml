@@ -2,12 +2,11 @@ blockExoticSubdeps: true
 catalog:
   '@types/jest': ^30.0.0
   '@types/node': ^24.13.3
-  jest: ^30.4.2
-  ts-jest: ^29.4.11
-  tsdown: ^0.22.8
+  jest: ^30.5.1
+  ts-jest: ^29.4.12
+  tsdown: ^0.22.14
   typescript: ^5.9.3
 catalogMode: strict
-ignoreDepScripts: true
 minimumReleaseAge: 20160 # 30 days
 minimumReleaseAgeExclude:
   - '@jsnw/*'
