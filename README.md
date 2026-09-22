@@ -1,7 +1,7 @@
 # jsn-utils
 ![coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-## 1.1.0
+## 1.5.0
 ## List of utility functions
 
 - `noop(): void` - A no-operation function that does nothing
@@ -13,6 +13,7 @@
 - `createPromisesCache` - deprecated; use createInFlightDeduper instead
 - `createInFlightDeduper` - Creates a deduplicator for in-flight promises or sync functions. Prevents duplicate executions for the same key while a promise is pending. Clears the entry after settlement
 - `resultify` - Executes a function and returns its result as a tuple `[value, error]`. Works with both sync and async functions. Never throws.
+- `clamp(num: number, min: number, max: number)` - Clamps a number between min and max
 
 ## List of utility classes
 
