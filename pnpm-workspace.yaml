@@ -1,7 +1,10 @@
+allowBuilds:
+  '@parcel/watcher': true
+  unrs-resolver: true
 blockExoticSubdeps: true
 catalog:
   '@types/jest': ^30.0.0
-  '@types/node': ^24.13.3
+  '@types/node': ^24.13.4
   jest: ^30.5.1
   ts-jest: ^29.4.12
   tsdown: ^0.22.14
