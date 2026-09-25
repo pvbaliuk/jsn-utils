@@ -1,5 +1,5 @@
 export type InFlightDeduper = {
-    use: <F extends () => any>(key: string, fn: F) => Promise<Awaited<ReturnType<F>>>;
+    use: <R extends any>(key: string, fn: () => R|Promise<R>) => Promise<Awaited<R>>;
 };
 
 /**
@@ -11,7 +11,7 @@ export type InFlightDeduper = {
 export function createInFlightDeduper(): InFlightDeduper{
     const __promises = new Map<string, Promise<any>>();
 
-    function use<F extends () => any>(key: string, fn: F): Promise<Awaited<ReturnType<F>>>{
+    function use<R extends any>(key: string, fn: () => R|Promise<R>): Promise<Awaited<R>>{
         let promise = __promises.get(key);
         if(promise)
             return promise;
